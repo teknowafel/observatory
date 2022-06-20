@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/teknowafel/observatory#readme",
   "dependencies": {
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "sh": "^0.0.3",
+    "table-parser": "^1.0.1"
   }
 }
