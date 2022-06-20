@@ -10,10 +10,11 @@
 </head>
 <body class="p-10">
     <div class="ease-in-out text-2xl duration-100 font-sans font-black text-white rounded-md hover:rounded-lg bg-slate-800 mb-6 p-3">Observatory</div>
-    <div class="gap-4 grid xl:grid-cols-5 2xl:grid-cols-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 text-white bg-green-300 rounded-lg p-4">
-        <div class="text-xl ease-in-out duration-100 rounded-md hover:rounded-lg bg-neutral-900 p-3">
+    <div class="gap-4 grid xl:grid-cols-5 2xl:grid-cols-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg p-4">
+        <div class="drop-shadow-xl text-xl ease-in-out duration-100 rounded-md hover:rounded-lg bg-neutral-900 p-3">
             <div class="block text-xl font-bold ease-in-out duration-100 font-sans rounded-md hover:rounded-lg bg-neutral-800 p-2 mb-4">Stats</div>
             <div class="grid-cols-1 grid">
+                
                 <div class="bg-blue-300 text-gray-800 rounded-md p-1 text-base font-bold mr-4 mb-1">OS</div>
                 <div class="text-base mb-3 ml-1">Debian 11 Bullseye</div>
 
@@ -29,20 +30,47 @@
                 <div class="block text-xl font-bold ease-in-out duration-100 font-sans rounded-md hover:rounded-lg mb-4">Usage</div>
 
                 <div class="bg-neutral-700 rounded-md p-1 text-base font-bold mr-4 mb-3">
-                    <div class="bg-green-400 whitespace-nowrap text-gray-900 rounded-md p-1 text-base font-bold" style="width: 35%">CPU | 35%</div>
+                    <div class="bg-green-400 whitespace-nowrap text-gray-900 rounded-md p-1 text-sm font-bold" style="width: 35%">CPU | 35%</div>
                 </div>
 
                 <div class="bg-neutral-700 rounded-md p-1 text-base font-bold mr-4 mb-3">
-                    <div class="bg-amber-400 whitespace-nowrap text-gray-900 rounded-md p-1 text-base font-bold" style="width: 50%">RAM | 50%</div>
+                    <div class="bg-amber-400 whitespace-nowrap text-gray-900 rounded-md p-1 text-sm font-bold" style="width: 50%">RAM | 50%</div>
                 </div>
             </div>
         </div>
-        <div class="text-xl ease-in-out duration-100 rounded-md hover:rounded-lg bg-neutral-900 p-3">
+
+        <div class="drop-shadow-xl text-xl ease-in-out duration-100 rounded-md hover:rounded-lg bg-neutral-900 p-3">
             <div class="block text-xl font-bold ease-in-out duration-100 font-sans rounded-md hover:rounded-lg bg-neutral-800 p-2 mb-4">Docker</div>
-            <div>f</div>
+            
+            <div class="bg-blue-300 text-gray-800 rounded-md p-1 text-base font-bold mr-4 mb-1">Compose</div>
+            <div class="text-base font-semibold mb-3 ml-1">3 stacks</div>
+
+            <div class="flex justify-end columns-2 gap-0 bg-neutral-700 text-white rounded-md p-1 text-base font-bold mr-4 mb-2">
+                <div class="inline width-auto">Nginx Proxy Manager</div>
+                <div class="bg-green-400 whitespace-nowrap text-gray-900 rounded-md p-1 text-sm ml-2 font-bold text-center w-auto inline-block justify-self-end">Running</div>
+            </div>
+            <div class="flex justify-end columns-2 gap-0 bg-neutral-700 text-white rounded-md p-1 text-base font-bold mr-4 mb-2">
+                <div class="inline width-auto">Blog</div>
+                <div class="bg-green-400 whitespace-nowrap text-gray-900 rounded-md p-1 text-sm ml-2 font-bold text-center w-auto inline-block justify-self-end">Running</div>
+            </div>
+
+            <div class="h-4"></div>
+
+            <div class="bg-blue-300 text-gray-800 rounded-md p-1 text-base font-bold mr-4 mb-2">Containers</div>
+
+            <div class="flex justify-end columns-2 gap-0 bg-neutral-700 text-white rounded-md p-1 text-base font-bold mr-4 mb-2">
+                <div class="inline width-auto">npm-app-1</div>
+                <div class="bg-green-400 whitespace-nowrap text-gray-900 rounded-md p-1 text-sm ml-2 font-bold text-center w-auto inline-block justify-self-end">Running</div>
+            </div>
+            <div class="flex justify-end columns-2 gap-0 bg-neutral-700 text-white rounded-md p-1 text-base font-bold mr-4 mb-2">
+                <div class="inline width-auto">blog-blog-1</div>
+                <div class="bg-green-400 whitespace-nowrap text-gray-900 rounded-md p-1 text-sm ml-2 font-bold text-center w-auto inline-block justify-self-end">Running</div>
+            </div>
+            
         </div>
-        <div class="text-xl ease-in-out duration-100 rounded-md hover:rounded-lg bg-neutral-900 p-3">
-            <div class="block text-xl font-bold ease-in-out duration-100 font-sans rounded-md hover:rounded-lg bg-neutral-800 p-2 mb-4">Processes</div>
+        
+        <div class="drop-shadow-xl text-xl ease-in-out duration-100 rounded-md hover:rounded-lg bg-neutral-900 p-3">
+            <div class="block text-xl font-bold ease-in-out duration-100 font-sans rounded-md hover:rounded-lg bg-neutral-800 p-2 mb-4">Sensors & Fans</div>
             <div>f</div>
         </div>
     </div>
