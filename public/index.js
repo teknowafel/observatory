@@ -30,3 +30,44 @@ fetch('compose')
         </div>`
         })
     });
+
+// Set RAM and Swap usage
+const setmem = () => {
+    fetch('memory')
+    .then(response => response.json())
+    .then(data => {
+        ram = document.getElementById("ram-usage");
+        let classList = ram.classList;
+        let classArray = [].slice.apply(classList);
+
+        let bg = classArray.filter(theclass => theclass.startsWith("bg-"))
+        ram.classList.replace(bg, 
+            data.memory < 50 ? "bg-green-400" : 
+            data.memory >= 50 ? "bg-yellow-400" : 
+            data.memory >= 75 ? "bg-red-400" :
+            ""
+        )
+        ram.style.width = `${data.memory}%`;
+        ram.innerHTML = `RAM | ${data.memory}%`;
+
+        swap = document.getElementById("swap-usage");
+        classList = swap.classList;
+        classArray = [].slice.apply(classList);
+
+        bg = classArray.filter(theclass => theclass.startsWith("bg-"))
+        ram.classList.replace(bg, 
+            data.swap < 50 ? "bg-green-400" : 
+            data.swap >= 50 ? "bg-yellow-400" : 
+            data.swap >= 75 ? "bg-red-400" :
+            ""
+        )
+        swap.style.width = `${data.swap}%`;
+        swap.innerHTML = `Swap | ${data.swap}%`;
+    });
+}
+
+// Getting RAM and Swap usage
+setmem();
+setInterval(() => {
+    setmem()
+}, 2000);

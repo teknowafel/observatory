@@ -1,6 +1,5 @@
 const fs = require("fs");
 const cpu = require("cpu-stats");
-const table = require("table-parser");
 const sh = require("sh");
 const express = require("express")
 
@@ -44,10 +43,5 @@ fs.readdir("/sys/class/thermal", (error, files) => {
             //console.log(Math.trunc(item.cpu))
         })
     });
-    sh("free").result(result => {
-        let parsed = table.parse(result);
-        mem = Math.trunc( ( parseInt(parsed[0].used[0]) / parseInt(parsed[0].total[0]) ) * 100 )
-        swap = Math.trunc( ( parseInt(parsed[1].used[0]) / parseInt(parsed[1].total[0]) ) * 100 )
-        //console.log(`Memory: ${mem}% Swap: ${swap}%`)
-    });
+    
 });
