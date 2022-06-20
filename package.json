@@ -1,0 +1,22 @@
+{
+  "name": "observatory",
+  "version": "1.0.0",
+  "description": "yes",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teknowafel/observatory.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teknowafel/observatory/issues"
+  },
+  "homepage": "https://github.com/teknowafel/observatory#readme",
+  "dependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
