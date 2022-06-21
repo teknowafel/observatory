@@ -12,7 +12,7 @@ module.exports = (app) => {
                 cores.push(Math.trunc(item.cpu));
                 total += Math.trunc(item.cpu);
             })
-            avg = Math.trunc(total / cores.length);
+            avg = Math.trunc(total / (cores.length) );
             res.send(
                 {
                     "average": avg,

@@ -149,3 +149,62 @@ getCores();
 setInterval(() => {
     getCores();
 }, 5000);
+
+// Get Disks data
+const getDisks = () => {
+    fetch('disks')
+        .then(response => response.json())
+        .then(data => {
+            disks = document.getElementById("disks");
+            disks.innerHTML = "";
+            data.forEach(disk => {
+                disks.innerHTML += `<div class="bg-neutral-700 rounded-md p-1 text-base font-bold mr-4 mb-3">
+                <div class="ease-in-out duration-500 ${disk.percent < 50 ? "bg-green-500" : disk.percent < 75 ? "bg-amber-500" : "bg-red-500"} whitespace-nowrap text-white rounded-md p-1 text-sm font-bold" style="width: ${disk.percent}%">${disk.fs} | ${disk.capacity}</div>
+            </div>`
+            });
+        });
+}
+getDisks();
+setInterval(() => {
+    getDisks();
+}, 5000);
+
+// Get Networking data
+const getNetworks = () => {
+    fetch('networks')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("tcp-rx").innerHTML = data.tcpRx;
+            document.getElementById("tcp-tx").innerHTML = data.tcpTx;
+            document.getElementById("udp-rx").innerHTML = data.udpRx;
+            document.getElementById("udp-tx").innerHTML = data.udpTx;
+        });
+}
+getNetworks();
+setInterval(() => {
+    getNetworks();
+}, 5000);
+
+// Get connections data
+const getConnections = () => {
+    fetch('netstat')
+        .then(response => response.json())
+        .then(data => {
+            const connections = document.getElementById("netstat-connections");
+
+            document.getElementById("netstat-connections-count").innerHTML = `${data.length} connections`;
+
+            connections.innerHTML = "";
+            data.forEach((connection) => {
+                connections.innerHTML += `<tr>
+                <td class="p-1">${connection.address}</td>
+                <td class="p-1">${connection.port}</td>
+                <td class="p-1">${connection.application}</td>
+            </tr>`
+            });
+        });
+}
+getConnections();
+setInterval(() => {
+    getConnections();
+}, 5000);
