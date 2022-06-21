@@ -1,0 +1,1 @@
+netstat -tup 2> /dev/null
