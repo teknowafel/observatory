@@ -4,17 +4,19 @@ const tableparser = require("table-parser");
 
 module.exports = (app) => {
     app.get("/networks", (req, res) => {
-        sh("netstat -s").result((results) => {
-            table = tableparser.parse(results);
-            res.send(
-                {
-                    "establishedConnections": table[28]['Ip:'][0],
-                    "tcpRx": table[29]['Ip:'][0],
-                    "tcpTx": table[30]['Ip:'][0],
-                    "udpRx": table[35]['Ip:'][0],
-                    "udpTx": table[38]['Ip:'][0]    
-                }
-            );
-        })
+        const interfaces = [];
+        fs.readdir("/sys/class/net", (error, files) => {
+            files.forEach(interface => {
+                interfaces.push(
+                    {
+                        "name": interface,
+                        "rxBytes": fs.readFileSync(`/sys/class/net/${interface}/statistics/rx_bytes`).toString().trim(),
+                        "txBytes": fs.readFileSync(`/sys/class/net/${interface}/statistics/tx_bytes`).toString().trim()
+                    }
+                )
+            })
+
+            res.send(interfaces);
+        });
     });
 }
