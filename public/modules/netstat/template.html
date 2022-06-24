@@ -1,0 +1,24 @@
+<div class="drop-shadow-xl text-xl ease-in-out duration-100 rounded-md hover:rounded-lg bg-neutral-900 p-3">
+    <div class="block text-xl font-bold ease-in-out duration-100 font-sans rounded-md hover:rounded-lg bg-neutral-800 p-2 mb-4"><i class="las la-plug"></i> Connections</div>
+
+    <div id="netstat-connections-count" class="text-base font-semibold mb-3 ml-1">n connections</div>
+    <div class="max-h-96 overflow-auto rounded-md">
+        <table class="table-fixed border-separate border border-neutral-700 bg-neutral-800 rounded-md text-base text-left font-normal">
+            <thead>
+                <tr>
+                    <th class="p-1">Address</th>
+                    <th class="p-1">Port</th>
+                    <th class="p-1">Application</th>
+                </tr>
+            </thead>
+
+            <tbody id="netstat-connections">
+                <tr>
+                    <td class="p-1">example.com</td>
+                    <td class="p-1">01234</td>
+                    <td class="p-1">example-app</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
