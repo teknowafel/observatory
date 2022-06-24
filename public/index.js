@@ -1,6 +1,18 @@
-import "./modules/stats/stats.js";
-import "./modules/docker/docker.js";
-import "./modules/usage/usage.js";
-import "./modules/disks/disks.js";
-import "./modules/networks/networks.js";
-import "./modules/sensors/sensors.js";
+const modules = [
+    "./modules/stats/stats.js",
+    "./modules/docker/docker.js",
+    "./modules/usage/usage.js",
+    "./modules/disks/disks.js",
+    "./modules/networks/networks.js",
+    "./modules/sensors/sensors.js",
+    "./modules/connections/connections.js"
+];
+
+const importNext = () => {
+    if (modules[0]){
+        import (modules[0]);
+        modules.shift();
+    }
+}
+
+importNext();

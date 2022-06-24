@@ -10,6 +10,8 @@ fetch('modules/usage/template.html')
             getCores();
             getMem();
         }, 5000);
+
+        importNext();
     });
 
 // Getting RAM and Swap usage

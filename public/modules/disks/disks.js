@@ -8,6 +8,8 @@ fetch('modules/disks/template.html')
         setInterval(() => {
             getDisks();
         }, 5000);
+
+        importNext();
     });
 
 // Get Disks data

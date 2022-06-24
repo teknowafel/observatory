@@ -1,5 +1,5 @@
 // Add Sensors to main container
-fetch('modules/netstat/template.html')
+fetch('modules/connections/template.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById("container-main").innerHTML += data;
@@ -7,6 +7,8 @@ fetch('modules/netstat/template.html')
         setInterval(() => {
             getConnections();
         }, 5000);
+
+        importNext();
     });
 
 // Get connections data

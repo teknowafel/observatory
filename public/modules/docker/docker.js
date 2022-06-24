@@ -10,6 +10,8 @@ fetch('modules/docker/template.html')
             getStacks()
             getContainers();
         }, 5000);
+
+        importNext();
     });
 
 // Getting Compose stacks

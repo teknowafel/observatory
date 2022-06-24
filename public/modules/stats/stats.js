@@ -8,6 +8,8 @@ fetch('modules/stats/template.html')
         setInterval(() => {
             getStats();
         }, 5000);
+
+        importNext();
     });
 
 const getStats = () => {

@@ -7,6 +7,8 @@ fetch('modules/networks/template.html')
         setInterval(() => {
             getNetworks();
         }, 5000);
+
+        importNext();
     });
 
 // Get Networking data

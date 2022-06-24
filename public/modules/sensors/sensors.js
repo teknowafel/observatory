@@ -7,6 +7,8 @@ fetch('modules/sensors/template.html')
         setInterval(() => {
             getSensors();
         }, 2000);
+
+        importNext();
     });
 
 // Get Sensor Info
