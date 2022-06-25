@@ -29,7 +29,13 @@ window.onload = () => {
     });
 
     document.getElementById("btn-modal-modules-cancel").addEventListener("click", () => {
+        const moduleModal = document.getElementById("modal-modules");
+        const modalBackdrop = document.getElementById("modal-backdrop");
 
+        modalBackdrop.style.width = "0%";
+        modalBackdrop.style.height = "0%";
+
+        moduleModal.classList.replace("opacity-100", "opacity-0");
     });
 
     document.getElementById("btn-modal-modules-save").addEventListener("click", () => {
