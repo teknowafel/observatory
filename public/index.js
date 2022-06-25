@@ -16,3 +16,23 @@ const importNext = () => {
 }
 
 importNext();
+
+window.onload = () => {
+    document.getElementById("btn-modules").addEventListener("click", () => {
+        const moduleModal = document.getElementById("modal-modules");
+        const modalBackdrop = document.getElementById("modal-backdrop");
+
+        modalBackdrop.style.width = "150%";
+        modalBackdrop.style.height = "150%";
+
+        moduleModal.classList.replace("opacity-0", "opacity-100");
+    });
+
+    document.getElementById("btn-modal-modules-cancel").addEventListener("click", () => {
+
+    });
+
+    document.getElementById("btn-modal-modules-save").addEventListener("click", () => {
+
+    });
+}
