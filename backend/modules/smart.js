@@ -18,12 +18,12 @@ module.exports = (app) => {
                     checkedDisks.push(
                         {
                             "disk": disk,
-                            "model": lines[4].replace("Model Number:", "").trim(),
-                            "healthCheck": lines[37].replace("SMART overall-health self-assessment test result:", "").trim(),
-                            "temp": lines[41].replace("Temperature:", "").trim(),
-                            "powerCycles": lines[50].replace("Power Cycles:", "").trim(),
-                            "poweredHours": lines[51].replace("Power On Hours:", "").trim(),
-                            "integrityErrors": lines[53].replace("Media and Data Integrity Errors:", "").trim()
+                            "model": lines[4].split(/\s/).at(-1),
+                            "healthCheck": lines[37].split(/\s/).at(-1),
+                            "temp": lines[41].split(/\s/).at(-1),
+                            "powerCycles": lines[50].split(/\s/).at(-1),
+                            "poweredHours": lines[51].split(/\s/).at(-1),
+                            "integrityErrors": lines[53].split(/\s/).at(-1)
                         }
                     );
 
