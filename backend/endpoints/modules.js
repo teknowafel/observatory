@@ -2,7 +2,7 @@ const fs = require("fs");
 
 module.exports = (app) => {
     app.get("/modules", (req, res) => {
-        fs.readdir("./modules", (error, files) => {
+        fs.readdir("./backend/modules", (error, files) => {
             let modules = [];
             if (error) {
                 console.error("Error reading routes", error);

@@ -2,9 +2,9 @@
   "name": "observatory",
   "version": "1.0.0",
   "description": "yes",
-  "main": "index.js",
+  "main": "backend/index.js",
   "scripts": {
-    "test": "nodemon index.js"
+    "test": "sudo nodemon backend/index.js"
   },
   "repository": {
     "type": "git",

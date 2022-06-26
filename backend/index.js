@@ -3,7 +3,7 @@ const express = require("express")
 
 const app = express()
 
-fs.readdir("./modules", (error, files) => {
+fs.readdir("./backend/modules", (error, files) => {
     if (error) {
         console.error("Error reading routes", error);
         process.exit(1);
@@ -15,7 +15,7 @@ fs.readdir("./modules", (error, files) => {
     })
 });
 
-fs.readdir("./endpoints", (error, files) => {
+fs.readdir("./backend/endpoints", (error, files) => {
     if (error) {
         console.error("Error reading routes", error);
         process.exit(1);
