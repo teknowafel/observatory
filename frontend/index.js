@@ -15,10 +15,7 @@ window.onload = () => {
     fetch('modules')
         .then(response => response.json())
         .then(data => {
-            console.log(enabledModulesConstant);
             data.forEach(module => {
-                console.log(module)
-                console.log(enabledModulesConstant.includes(module))
                 document.getElementById("modal-modules-body").innerHTML += `<tr>
             <td class="p-1">${module}</td>
             <td class="p-1 w-12"><input id="${module}-selected" type="checkbox" class="default" ${enabledModulesConstant.includes(module) ? "checked" : ""}/></td>

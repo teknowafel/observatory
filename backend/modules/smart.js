@@ -18,9 +18,8 @@ module.exports = (app) => {
                     checkedDisks.push(
                         {
                             "disk": disk,
-                            "model": lines[4].split(/\s/).at(-1),
                             "healthCheck": lines[37].split(/\s/).at(-1),
-                            "temp": lines[41].split(/\s/).at(-1),
+                            "temp": `${lines[41].split(/\s/).at(-2)}° ${lines[41].split(/\s/).at(-1)}`,
                             "powerCycles": lines[50].split(/\s/).at(-1),
                             "poweredHours": lines[51].split(/\s/).at(-1),
                             "integrityErrors": lines[53].split(/\s/).at(-1)
