@@ -1,3 +1,4 @@
 docker
 docker compose plugin
 net-tools
+smartctl
