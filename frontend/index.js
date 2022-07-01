@@ -11,9 +11,8 @@ const importNext = () => {
     }
 }
 
-importNext();
-
 window.onload = () => {
+    importNext();
     document.getElementById("modal-modules-body").innerHTML = "";
     fetch('modules')
         .then(response => response.json())

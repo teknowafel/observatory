@@ -17,7 +17,7 @@ const getDisks = () => {
     fetch('disks')
         .then(response => response.json())
         .then(data => {
-            disks = document.getElementById("disks");
+            const disks = document.getElementById("disks");
             disks.innerHTML = "";
             data.forEach(disk => {
                 disks.innerHTML += `<div class="bg-neutral-700 rounded-md p-1 text-sm font-bold mr-4 mb-3">

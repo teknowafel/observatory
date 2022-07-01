@@ -16,7 +16,7 @@ const getSensors = () => {
     fetch('sensors')
         .then(response => response.json())
         .then(data => {
-            sensors = document.getElementById("sensors");
+            const sensors = document.getElementById("sensors");
             
             sensors.innerHTML = "";
             data.forEach(sensor => {

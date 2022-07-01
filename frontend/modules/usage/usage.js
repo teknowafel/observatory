@@ -68,7 +68,7 @@ const getCores = () => {
             avg.style.width = `${data.average}%`;
             avg.innerHTML = `Avg | ${data.average}%`;
 
-            cores = document.getElementById("cores");
+            const cores = document.getElementById("cores");
             cores.innerHTML = "";
             data.cores.forEach(core => {
                 cores.innerHTML += `<div class="bg-neutral-700 rounded-md p-1">
