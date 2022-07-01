@@ -11,16 +11,18 @@
     <script src="index.js"></script>
 </head>
 <body class="p-3 md:p-6 lg:p-6 xl:p-8">
-    <div class="ease-in-out text-2xl duration-100 font-sans font-black inline-block text-white rounded-md hover:rounded-lg bg-slate-800 mb-6 p-2"><i class="las la-binoculars"></i> Observatory <button id="btn-modules" class="bg-indigo-500 text-white p-1 ml-1 rounded-md"><i class="las la-puzzle-piece"></i></button></div>
+    <div class="ease-in-out text-xl duration-100 font-sans font-black inline-block text-white rounded-md hover:rounded-lg bg-slate-800 mb-6 p-2"><i class="las la-binoculars"></i> Observatory <button id="btn-modules" class="bg-indigo-500 text-white p-1 ml-1 rounded-md"><i class="las la-puzzle-piece"></i></button></div>
+    
     <div id="container-main" class="gap-4 grid xl:grid-cols-5 2xl:grid-cols-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg p-2">
 
     </div>
 
-    <div id="modal-backdrop" class="bg-gradient-to-r ease-in-out duration-500 from-indigo-500 via-purple-500 to-pink-500 text-white fixed rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style="width: 0%; height: 0%;" ></div>
-    <div id="modal-modules" class="bg-neutral-900 ease-in-out duration-500 opacity-0 w-96 p-2 text-white rounded-md fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <div class="block text-xl font-bold ease-in-out duration-100 font-sans rounded-md hover:rounded-lg bg-neutral-800 p-2 mb-4"><i class="las la-puzzle-piece"></i> Modules</div>
+    <div id="modal-backdrop" class="bg-gradient-to-r ease-in-out duration-300 from-indigo-500 via-purple-500 to-pink-500 text-white fixed rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style="width: 0%; height: 0%;" ></div>
+    
+    <div id="modal-modules" class="bg-neutral-900 ease-in-out duration-300 opacity-0 w-96 p-2 text-white rounded-md fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div class="block text-lg font-bold ease-in-out duration-100 font-sans rounded-md hover:rounded-lg bg-neutral-800 p-2 mb-4"><i class="las la-puzzle-piece"></i> Modules</div>
         <div class="max-h-96 overflow-auto rounded-md">
-            <table class="table-fixed w-full border-separate border border-neutral-700 bg-neutral-800 rounded-md text-base text-left font-normal">
+            <table class="table-fixed w-full border-separate border border-neutral-700 bg-neutral-800 rounded-md text-sm text-left font-normal">
                 <thead>
                     <tr>
                         <th class="p-1">Name</th>
@@ -37,9 +39,9 @@
             </table>
         </div>
 
-        <div class="flex justify-end columns-2 gap-2 text-white rounded-md p-1 mt-2 text-base font-bold">
-            <div id="btn-modal-modules-cancel" class="bg-neutral-600 hover:bg-neutral-700 cursor-pointer whitespace-nowrap text-gray-900 rounded-md p-1 text-base font-bold text-center"><i class="las la-trash"></i> Cancel</div>
-            <div id="btn-modal-modules-save" class="bg-green-500 hover:bg-green-600 cursor-pointer whitespace-nowrap text-gray-900 rounded-md p-1 text-base font-bold text-center"><i class="las la-save"></i> Save</div>
+        <div class="flex justify-end columns-2 gap-2 text-white rounded-md p-1 mt-2 text-sm font-bold">
+            <div id="btn-modal-modules-cancel" class="bg-neutral-600 hover:bg-neutral-700 cursor-pointer whitespace-nowrap text-gray-900 rounded-md p-1 text-sm font-bold text-center"><i class="las la-trash"></i> Cancel</div>
+            <div id="btn-modal-modules-save" class="bg-green-500 hover:bg-green-600 cursor-pointer whitespace-nowrap text-gray-900 rounded-md p-1 text-sm font-bold text-center"><i class="las la-save"></i> Save</div>
         </div>
     </div>
     

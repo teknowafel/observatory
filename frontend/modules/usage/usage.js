@@ -72,7 +72,7 @@ const getCores = () => {
             cores.innerHTML = "";
             data.cores.forEach(core => {
                 cores.innerHTML += `<div class="bg-neutral-700 rounded-md p-1">
-                <div class="ease-in-out duration-500 ${core < 50 ? "bg-green-500" : core < 75 ? "bg-amber-500" : "bg-red-500"} whitespace-nowrap text-white rounded-md p-1 text-sm font-bold" style="width: ${core}%">${core}%</div>
+                <div class="ease-in-out duration-500 ${core < 50 ? "bg-green-500" : core < 75 ? "bg-amber-500" : "bg-red-500"} whitespace-nowrap text-white rounded-md p-1 text-xs font-bold" style="width: ${core}%">${core}%</div>
             </div>`
             });
         });

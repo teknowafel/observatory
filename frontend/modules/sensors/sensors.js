@@ -20,8 +20,8 @@ const getSensors = () => {
             
             sensors.innerHTML = "";
             data.forEach(sensor => {
-                sensors.innerHTML += `<div class="bg-neutral-700 rounded-md p-1 text-base font-bold mr-4 mb-3">
-                <div class="ease-in-out duration-500 ${sensor.temp < 40 ? "bg-sky-500" : sensor.temp < 70 ? "bg-amber-500" : "bg-red-500"} whitespace-nowrap text-white rounded-md p-1 text-sm font-bold" style="width: ${sensor.temp}%">${sensor.name} | ${sensor.temp}°C</div>
+                sensors.innerHTML += `<div class="bg-neutral-700 rounded-md p-1 text-sm font-bold mr-4 mb-3">
+                <div class="ease-in-out duration-500 ${sensor.temp < 40 ? "bg-sky-500" : sensor.temp < 70 ? "bg-amber-500" : "bg-red-500"} whitespace-nowrap text-white rounded-md p-1 text-xs font-bold" style="width: ${sensor.temp}%">${sensor.name} | ${sensor.temp}°C</div>
             </div>`
             })
         });

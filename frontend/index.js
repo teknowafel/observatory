@@ -5,6 +5,11 @@ const importNext = () => {
     if (enabledModules[0]){
         import (`./modules/${enabledModules[0]}/${enabledModules[0]}.js`);
         enabledModules.shift();
+    } else {
+        document.getElementById("modal-backdrop").style.width = "0px";
+        document.getElementById("modal-backdrop").style.height = "0px";
+
+        document.getElementById("backdrop-logo").classList.add("hidden");
     }
 }
 
