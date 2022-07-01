@@ -8,8 +8,6 @@ const importNext = () => {
     } else {
         document.getElementById("modal-backdrop").style.width = "0px";
         document.getElementById("modal-backdrop").style.height = "0px";
-
-        document.getElementById("backdrop-logo").classList.add("hidden");
     }
 }
 
