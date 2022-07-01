@@ -3,9 +3,7 @@ fetch('modules/pihole/template.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById("container-main").innerHTML += data;
-
-        //document.getElementById("pihole-url").value = localStorage.getItem("pihole-url");
-        document.getElementById("pihole-url").value = "poop";
+        
         getPihole();
         setInterval(() => {
             getPihole();
@@ -16,8 +14,7 @@ fetch('modules/pihole/template.html')
 
 // Get Pi-Hole data
 const getPihole = () => {
-    localStorage.setItem("pihole-url", document.getElementById("pihole-url").value);
-    fetch(`${localStorage.getItem("pihole-url")}/admin/api.php`)
+    fetch("pihole")
         .then(response => response.json())
         .then(data => {
             document.getElementById("pihole-adlist-domains").innerHTML = data.domains_being_blocked;

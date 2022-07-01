@@ -3,7 +3,7 @@ const tableparser = require("table-parser");
 
 module.exports = (app) => {
     app.get("/netstat", (req, res) => {
-        sh("sh ./netstat.sh").result((results) => {
+        sh("sh ./backend/netstat.sh").result((results) => {
             connections = [];
             table = tableparser.parse(results);
             table.shift();
