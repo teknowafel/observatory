@@ -1,24 +1,24 @@
-const cpu = require("cpu-stats");
-const tableparser = require("table-parser");
-const sh = require("sh");
+const cpu = require("cpu-stats"); // We need cpu-stats to get CPU info
+const tableparser = require("table-parser"); // We need table parser to parse command output
+const sh = require("sh"); // We need sh to run free
 
 module.exports = (app) => {
-    app.get("/cpu", (req, res) => {
-        cpu(1000, (error, result) => {
-            total = 0;
-            cores = []
-            if (error){
+    app.get("/cpu", (req, res) => { // CPU endpoint to get CPU info
+        cpu(1000, (error, result) => { // Run the cpu-stats module to get load
+            let total = 0; // Create integer to store total cpu usage
+            let cores = []; // Create array to store cores in usage %
+            if (error){ // Handle error
                 console.log("error getting cpu stats");
             }
-            result.forEach((item) => {
-                cores.push(Math.trunc(item.cpu));
-                total += Math.trunc(item.cpu);
+            result.forEach((item) => { // Iterate through the cores
+                cores.push(Math.trunc(item.cpu)); // Add the core's usage to the array
+                total += Math.trunc(item.cpu); // Add to the total CPU usage
             })
-            avg = Math.trunc(total / (cores.length) );
-            res.send(
+            avg = Math.trunc(total / (cores.length) ); // Generate the average cpu usage
+            res.send( // Send back
                 {
-                    "average": avg,
-                    "cores": cores
+                    "average": avg, // Average usage of a core
+                    "cores": cores // Array of core usage
                 }
             )
         });
