@@ -23,6 +23,6 @@ const getDisks = () => {
                 disks.innerHTML += `<div class="bg-neutral-700 rounded-md p-1 text-sm font-bold mr-4 mb-3">
                 <div class="ease-in-out duration-500 ${disk.percent < 50 ? "bg-green-500" : disk.percent < 75 ? "bg-amber-500" : "bg-red-500"} whitespace-nowrap text-white rounded-md p-1 text-xs font-bold" style="width: ${disk.percent}%">${disk.fs} | ${disk.capacity}</div>
             </div>`
-            });
+            }); // Add the disk to the disks container
         });
 }

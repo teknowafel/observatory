@@ -1,4 +1,4 @@
-// Add Compose to main container
+// Add the template to main container
 fetch('modules/docker/template.html')
     .then(response => response.text())
     .then(data => {
@@ -6,7 +6,7 @@ fetch('modules/docker/template.html')
         getStacks();
         getContainers();
 
-        setInterval(() => {
+        setInterval(() => { // Get stack and container info every 5 seconds
             getStacks()
             getContainers();
         }, 5000);

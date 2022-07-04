@@ -5,9 +5,9 @@ fetch('modules/stats/template.html')
         document.getElementById("container-main").innerHTML += data;
         getStats();
 
-        setInterval(() => {
+        setInterval(() => { // Get system stats every minute
             getStats();
-        }, 5000);
+        }, 1000 * 60);
 
         importNext();
     });
@@ -15,11 +15,11 @@ fetch('modules/stats/template.html')
 const getStats = () => {
     // Getting stats
     fetch('stats')
-        .then(response => response.json())
+        .then(response => response.json()) // Use .json() to parse JSON
         .then(data => {
             document.getElementById("hostname").innerHTML = data.hostname;
             document.getElementById("os").innerHTML = data.os;
             document.getElementById("host").innerHTML = data.host;
             document.getElementById("uptime").innerHTML = data.uptime;
-        });
+        }); // Update the data with system info
 }
