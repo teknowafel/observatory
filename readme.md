@@ -1,7 +1,7 @@
 # Observatory
 ## Keep tabs on your servers
 
-![Observatory](https://github.com/teknowafel/observatory/raw/master/img/observatory.png)
+![Observatory](https://github.com/teknowafel/observatory/raw/master/img/observatory.png)  
 
 Observatory is a simple, modular way to view vital information about your machines. It's not just a dashboard but rather a window into what's going on. The netstat mdule allows you to keep an eye out for bad actors, and the S.M.A.R.T module can alert you to failing disks. All of this is FOSS under a GNU GPL license for you and others to improve.
 
@@ -23,11 +23,11 @@ module.exports = {
 ## Usage
 Just run `npm start` as root, and the webserver will be accessible on port 8080. The express backend and static frontend are also separate, so modifying the code to keep the two on different containers or machines would be simple. The frontend will have an option to choose from different backends soon.
 
-![Modules](https://github.com/teknowafel/observatory/raw/master/img/modules.png)
+![Modules](https://github.com/teknowafel/observatory/raw/master/img/modules.png)  
 Modules can be enabled or disabled on the user end using this modal, and preferences are stored in LocalStorage. Choose to show/hide what you need/don't need respectively.
 
 ## Docker
 Dockerfile and CD builds will be coming in v1.2
 
 ## Security
-In case you're worried about someone seeing your server's CPU usage, reverse proxies like NGINX support authentication before redirecting the user to the site. I'm not going into detail here, but it should be fairly straightforward.
+In case you're worried about someone seeing your server's CPU usage, reverse proxies like NGINX support authentication before redirecting the user to the site. I'm not going into detail here, but it should be pretty straightforward.
