@@ -1,4 +1,4 @@
-// Config for Observatory
+// backend/config.js
 
 module.exports = {
     // piholeUrl: "http://10.0.0.1" // URL to the Pi-Hole web interface which is used for API access
