@@ -7,6 +7,8 @@ module.exports = (app) => {
             .then(response => response.json()) // Use json() to parse the json
             .then(data => {
                 res.send(data); // Send the data from the api verbatim
+            }).catch((e) => {
+                console.log(`Error getting Pi-Hole Data: ${e}`)
             });
     });
 }

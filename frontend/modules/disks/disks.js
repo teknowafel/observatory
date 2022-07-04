@@ -1,15 +1,15 @@
-// Add Usage to main container
+// Add template to main container
 fetch('modules/disks/template.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById("container-main").innerHTML += data;
         getDisks();
 
-        setInterval(() => {
+        setInterval(() => { // Get disk info every 5 seconds
             getDisks();
         }, 5000);
 
-        importNext();
+        importNext(); // Call importNext
     });
 
 // Get Disks data

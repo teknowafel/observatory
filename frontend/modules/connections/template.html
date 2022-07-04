@@ -1,13 +1,13 @@
-<div class="drop-shadow-xl text-lg ease-in-out duration-100 rounded-md hover:rounded-lg bg-neutral-900 p-3">
-    <div class="flex text-lg font-bold ease-in-out duration-100 font-sans rounded-md hover:rounded-lg bg-neutral-800 mb-4">
+<div class="drop-shadow-xl text-lg ease-in-out duration-100 rounded-md hover:rounded-lg bg-neutral-900 p-3"> <!-- Main container for connections-->
+    <div class="flex text-lg font-bold ease-in-out duration-100 font-sans rounded-md hover:rounded-lg bg-neutral-800 mb-4"> <!-- Stylized title -->
         <div class="rounded-md bg-indigo-500 p-1 mr-1"><i class="las la-plug"></i></div> 
         <div class="p-1">Connections</div>
     </div>
 
-    <div id="netstat-connections-count" class="text-sm font-semibold mb-3 ml-1">n connections</div>
-    <div class="max-h-96 overflow-auto rounded-md">
-        <table class="table-fixed w-full border-separate border border-neutral-700 bg-neutral-800 rounded-md text-sm text-left font-normal">
-            <thead>
+    <div id="netstat-connections-count" class="text-sm font-semibold mb-3 ml-1">n connections</div> <!-- Display the amount of active connections -->
+    <div class="max-h-96 overflow-auto rounded-md"> <!-- Scrollable list of connecions -->
+        <table class="table-fixed w-full border-separate border border-neutral-700 bg-neutral-800 rounded-md text-sm text-left font-normal"> <!-- Table with connections -->
+            <thead> <!-- Table Heading -->
                 <tr>
                     <th class="p-1">Address</th>
                     <th class="p-1">Port</th>
@@ -15,8 +15,8 @@
                 </tr>
             </thead>
 
-            <tbody id="netstat-connections">
-                <tr>
+            <tbody id="netstat-connections"> <!-- Body of the table -->
+                <tr> <!-- Placeholder table row with fake info -->
                     <td class="p-1">example.com</td>
                     <td class="p-1">01234</td>
                     <td class="p-1">example-app</td>
