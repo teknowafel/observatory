@@ -23,10 +23,7 @@ const getSmart = () => {
                 <div class="width-auto mb-1">${disk.disk}</div>
                 <div class="grid gap-1 grid-cols-3">
                     <div class="bg-${disk.healthCheck == "PASSED" ? "green" : "red"}-500 whitespace-nowrap text-gray-900 rounded-md p-1 text-xs font-bold text-center">${disk.healthCheck}</div>
-                    <div class="bg-blue-400 whitespace-nowrap text-gray-900 rounded-md p-1 text-xs font-bold text-center">${disk.temp}</div>
-                    <div class="bg-blue-400 whitespace-nowrap text-gray-900 rounded-md p-1 text-xs font-bold text-center">${disk.powerCycles} cycles</div>
-                    <div class="bg-blue-400 whitespace-nowrap text-gray-900 rounded-md p-1 text-xs font-bold text-center">${disk.poweredHours}h</div>
-                    <div class="bg-blue-400 whitespace-nowrap text-gray-900 rounded-md p-1 text-xs font-bold text-center">${disk.integrityErrors} errors</div>
+                    <div class="bg-${disk.errors == "No Errors" ? "green" : "red"}-400 whitespace-nowrap text-gray-900 rounded-md p-1 text-xs font-bold text-center">${disk.errors}</div>
                 </div>
             </div>`;
             })
