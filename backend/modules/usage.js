@@ -14,7 +14,7 @@ module.exports = (app) => {
                 cores.push(Math.trunc(item.cpu)); // Add the core's usage to the array
                 total += Math.trunc(item.cpu); // Add to the total CPU usage
             })
-            avg = Math.trunc(total / (cores.length) ); // Generate the average cpu usage
+            const avg = Math.trunc((total / (cores.length*100) ) * 100 ); // Generate the overall cpu usage
             res.send( // Send back
                 {
                     "average": avg, // Average usage of a core

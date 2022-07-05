@@ -72,7 +72,7 @@ const getCores = () => {
                 ""
             )
             avg.style.width = `${data.average}%`;
-            avg.innerHTML = `Avg | ${data.average}%`;
+            avg.innerHTML = `Overall | ${data.average}%`;
 
             const cores = document.getElementById("cores"); // Get the div of cores
             cores.innerHTML = ""; // Clear the div

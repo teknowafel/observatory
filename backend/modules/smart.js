@@ -3,7 +3,7 @@ const sh = require("sh"); // We need sh to run the smartctl command
 module.exports = (app) => {
     app.get("/smart", (req, res) => { // S.M.A.R.T endpoint to check drive status
         
-        sh("smartctl --scan").result((output) => { // Run smartctl --scan to get a list of SMART disks
+        sh(`chroot /host "smartctl" "--scan"`).result((output) => { // Run smartctl --scan to get a list of SMART disks
             let disks = []; // Create an array to hold he disks
             output.split("\n").forEach((line) => { // Iterate through all disks
                 if (line.split(/\s/)[0]){

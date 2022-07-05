@@ -1,25 +1,18 @@
-const fs = require("fs"); // We need fs to read the statistics
+const sh = require("sh"); // We need sh to run netstat
+const tableparser = require("table-parser"); // We need table-parser to parse the output of netstat
 
 module.exports = (app) => {
     app.get("/networks", (req, res) => { // Networks endpoint to read network statistics
         let interfaces = []; // Create an array to hold network interfaces
-        fs.readdir("/sys/class/net", (error, files) => { // Read the directory of networks
-            files.forEach(interface => { // Iterate through the networks
-                let rxBytes = "";
-                let txBytes = "";
-                // Read the rx and tx bytes with readFileSync like in the lower part of the code, but using try/catch
-                try {
-                    rxBytes = fs.readFileSync("/sys/class/net/" + interface + "/statistics/rx_bytes").toString().trim();
-                    txBytes = fs.readFileSync("/sys/class/net/" + interface + "/statistics/tx_bytes").toString().trim();
-                } catch (error) {
-                    console.log(`Error reading network stats for network ${interface}`);
-                }
-
+        sh("netstat -i").result((results) => { // Read the output of netstat
+            table = tableparser.parse(results); // Parse the output of netstat
+            table.splice(0, 2); // Remove the first two rows from the output
+            table.forEach(interface => { // Iterate through the networks
                 interfaces.push( // Add the interface to the array
                     {
-                        "name": interface, // Name of the interface
-                        "rxBytes": rxBytes, // Bytes recieved
-                        "txBytes": txBytes // Bytes transmitted
+                        "name": interface.Kernel[0], // Name of the interface
+                        "rx": parseInt(interface.table[0]), // Packets recieved
+                        "tx": parseInt(interface.table[4]) // Packets transmitted
                     }
                 )
             });

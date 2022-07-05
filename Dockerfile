@@ -11,7 +11,9 @@ RUN apt-get update && apt-get install -y \
     npm \
     net-tools \
     smartmontools \
-    procps
+    procps \
+    binutils \
+    debootstrap
 
 RUN npm i -g n && \
     n 18
