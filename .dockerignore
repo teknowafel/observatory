@@ -1,0 +1,6 @@
+.gitignore
+LICENSE.md
+package-lock.json
+readme.md
+requirements.txt
+tailwind.css

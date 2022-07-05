@@ -4,7 +4,8 @@
   "description": "yes",
   "main": "backend/index.js",
   "scripts": {
-    "test": "sudo nodemon backend/index.js"
+    "test": "sudo nodemon backend/index.js",
+    "start": "node backend/index.js"
   },
   "repository": {
     "type": "git",
