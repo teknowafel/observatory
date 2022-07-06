@@ -27,7 +27,20 @@ Just run `npm start` as root, and the webserver will be accessible on port 8080.
 Modules can be enabled or disabled on the user end using this modal, and preferences are stored in LocalStorage. Choose to show/hide what you need/don't need respectively.
 
 ## Docker
-Dockerfile and CD builds will be coming in v1.2
+Here's the compose file and rationalization:
+```yml
+# docker-compose.yml
+version: '3'
+
+services:
+  observatory:
+    image: ghcr.io/teknowafel/observatory:latest
+    privileged: true # Needs access for various diagnostic commands
+    network_mode: host # Needs access to the host network for netstat
+    volumes:
+      - /:/host:ro # Mount the host filesystem in read-only mode for chroot
+      - /var/run/docker.sock:/var/run/docker.sock:ro # We need the docker socket in read-only to check running containers
+```
 
 ## Security
 In case you're worried about someone seeing your server's CPU usage, reverse proxies like NGINX support authentication before redirecting the user to the site. I'm not going into detail here, but it should be pretty straightforward.

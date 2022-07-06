@@ -1,10 +1,11 @@
+# docker-compose.yml
 version: '3'
 
 services:
   observatory:
-    image: observatory:latest
-    privileged: true
-    network_mode: host
+    image: ghcr.io/teknowafel/observatory:latest
+    privileged: true # Needs access for various diagnostic commands
+    network_mode: host # Needs access to the host network for netstat
     volumes:
-      - /:/host:ro
-      - /var/run/docker.sock:/var/run/docker.sock
+      - /:/host:ro # Mount the host filesystem in read-only mode for chroot
+      - /var/run/docker.sock:/var/run/docker.sock:ro # We need the docker socket in read-only to check running containers
