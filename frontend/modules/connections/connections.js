@@ -24,7 +24,7 @@ const getConnections = () => { // Get connections data
                 connections.innerHTML += `<tr>
                 <td class="p-1">${connection.address}</td>
                 <td class="p-1">${connection.port}</td>
-                <td class="p-1">${connection.application}</td>
+                <td class="p-1">${(connection.application) ? connection.application : "-"}</td>
             </tr>`
             }); // Add a row to the table with the address, port, and application
         });
