@@ -1,4 +1,5 @@
 const fs = require("fs"); // We need fs to read all of the modules
+const config = require("../config.js");
 
 module.exports = (app) => {
     app.get("/modules", (req, res) => { // Modules route to list modules
@@ -10,7 +11,9 @@ module.exports = (app) => {
             }
         
             files.forEach(file => {
-                modules.push(file.slice(0, -3)); // Add each module minus the file extension to the modules array
+                if (!config.moduleBlacklist.includes(file.slice(0, -3))) { // Check if the module is in the blacklist
+                    modules.push(file.slice(0, -3)); // Add the module to the list if it is not in the blacklist
+                }
             });
 
             res.send(modules); // Send back an array of modules
