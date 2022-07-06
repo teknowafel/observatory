@@ -28,7 +28,7 @@ jobs:
       # Log in to the registry
       - name: Docker login
         run: |
-          docker login ghcr.io --username teknowafel --password ${{ secrets.GITHUB_TOKEN }}
+          docker login ghcr.io --username teknowafel --password ${{ secrets.PAT }}
       # Build the image
       - name: Docker build
         run: |
