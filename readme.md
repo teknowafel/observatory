@@ -13,7 +13,7 @@ The frontend is written in vanilla JavaScript and utilizes the TailwindCSS frame
 ## Configuration
 config.js in the backend folder should look familiar to anyone who's used JS or JSON. Currently, there is only one key-value pair, but it is planned to add more in the future as functionality is added.
 ```js
-// backend/config.js
+// /path/to/config.js
 
 module.exports = {
     // piholeUrl: "http://10.0.0.1" // URL to the Pi-Hole web interface which is used for API access
@@ -38,6 +38,7 @@ services:
     privileged: true # Needs access for various diagnostic commands
     network_mode: host # Needs access to the host network for netstat
     volumes:
+      - /path/to/config.js:/backend/config.js
       - /:/host:ro # Mount the host filesystem in read-only mode for chroot
       - /var/run/docker.sock:/var/run/docker.sock:ro # We need the docker socket in read-only to check running containers
 ```

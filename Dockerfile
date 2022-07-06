@@ -1,6 +1,6 @@
 FROM debian:bullseye-slim
 
-WORKDIR /app
+WORKDIR /
 
 RUN apt-get update && apt-get install -y \
     ca-certificates \
