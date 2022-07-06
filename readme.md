@@ -21,7 +21,7 @@ module.exports = {
 };
 ```
 ## Usage
-Just run `npm start` as root, and the webserver will be accessible on port 8080. The express backend and static frontend are also separate, so modifying the code to keep the two on different containers or machines would be simple. The frontend will have an option to choose from different backends soon.
+Use the Docker compose file below, and the webserver will be accessible on port 8080. The express backend and static frontend are also separate, so modifying the code to keep the two on different containers or machines would be simple. The frontend will have an option to choose from different backends soon.
 
 ![Modules](https://github.com/teknowafel/observatory/raw/master/img/modules.png)  
 Modules can be enabled or disabled on the user end using this modal, and preferences are stored in LocalStorage. Choose to show/hide what you need/don't need respectively.
