@@ -11,15 +11,16 @@ The backend is a simple express webserver with microservices for each endpoint s
 The frontend is written in vanilla JavaScript and utilizes the TailwindCSS framework for a responsive, mobile-friendly layout that's easy on the eyes.
 
 ## Configuration
-config.js in the backend folder should look familiar to anyone who's used JS or JSON. You can configure the Pi-Hole URL, search engine query URL, and the module blacklist, which is an array of module names to be disabled.
+config.js in the backend folder should look familiar to anyone who's used JS or JSON. You can configure the port, Pi-Hole URL, search engine query URL, and the module blacklist, which is an array of module names to be disabled.
 ```js
 // /path/to/config.js
 
 module.exports = {
+    port: 8080,
     // piholeUrl: "http://10.0.0.1" // URL to the Pi-Hole web interface which is used for API access
     piholeUrl: "http://localhost",
     searchUrl: "https://duckduckgo.com/?q=",
-    moduleBlacklist: [
+    moduleBlacklist: [ // Add names of modules to the array to blacklist them
         "search"
     ]
 };

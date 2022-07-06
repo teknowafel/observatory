@@ -31,6 +31,6 @@ fs.readdir("./backend/endpoints", (error, files) => { // Scan the directory of e
 });
 
 
-app.listen(8080, () => { // Run the webserver
+app.listen(config.port, () => { // Run the webserver
     console.info(`Webserver started on port 8080.`);
 });
