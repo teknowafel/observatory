@@ -26,6 +26,8 @@ module.exports = {
 };
 ```
 ## Usage
+Observatory has a few dependencies due to utilizing CLI utilities that are run on the host through the use of `chroot`. Depending on your distribution, you may have to install `net-tools`, `smartmontools`, and `procps` on debian or their Fedora/Arch/Gentoo/etc. equivalents.
+
 Use the Docker compose file below, and the webserver will be accessible on port 8080. The express backend and static frontend are also separate, so modifying the code to keep the two on different containers or machines would be simple. The frontend will have an option to choose from different backends soon.
 
 ![Modules](https://github.com/teknowafel/observatory/raw/master/img/modules.png)  
