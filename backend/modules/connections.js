@@ -10,9 +10,9 @@ module.exports = (app) => {
             table.forEach((connection) => { // Iterate through each current connection that netstat detected
                 connections.push( // Add the connection to the array
                     {
-                        "address": connection['(w/o'][0].split(":")[0], // Where the connection is from/to
-                        "port": connection['(w/o'][0].split(":")[1], // Port of the connection
-                        "application": connection['(w/o'][3].split("/")[1] // Application on the host using the connection
+                        "address": connection['(w/o'][0]?.split(":")[0], // Where the connection is from/to
+                        "port": connection['(w/o'][0]?.split(":")[1], // Port of the connection
+                        "application": connection['(w/o'][3]?.split("/")[1] // Application on the host using the connection
                     }
                 )
             });
