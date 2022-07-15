@@ -13,12 +13,29 @@ module.exports = (app) => {
 
             const checkedDisks = []; // Create an array to store checked disks
             disks.forEach((disk) => { // Iterate through the disks found
-                sh(`smartctl -a ${disk}`).result((output) => { // Run smartctl -a on the disk to get info
+                sh(`chroot /host "smartctl" "-a" "${disk}"`).result((output) => { // Run smartctl -a on the disk to get info
+                    let integrityErrors = 0;
+                    let temp = 0;
+                    let hours = 0;
+                    output.split("\n").forEach((line) => { // Read each line of the output
+                        if (line.includes("Temperature:")){
+                            const split = line.split(" ");
+                            temp = split[split.length - 2];
+                        } else if (line.includes("Power On Hours:")) {
+                            const split = line.split(" ");
+                            hours = split[split.length - 1];
+                        } else if (line.includes("Media and Data Integrity Errors:")) {
+                            const split = line.split(" ");
+                            integrityErrors = split[split.length - 1];
+                        }
+                    });
                     checkedDisks.push( // Add the disk to the array
                         {
                             "disk": disk, // Name of the disk
                             "healthCheck": (output.includes("PASSED")) ? "PASSED" : "FAILED", // If the disk is healthy
-                            "errors": (output.includes("No Errors Logged")) ? "No Errors" : "Errors" // If the disk has errors
+                            "integrityErrors": integrityErrors, // If the disk has errors
+                            "temp": temp,
+                            "hours": hours
                         }
                     );
 

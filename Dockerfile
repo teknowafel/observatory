@@ -1,35 +1,22 @@
-FROM debian:bullseye-slim
+FROM node:alpine
 
 WORKDIR /
 
-RUN apt-get update && apt-get install -y \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release \
-    nodejs \
-    npm \
-    net-tools \
-    smartmontools \
-    procps \
-    binutils \
-    debootstrap
+RUN apk add --update --no-cache \
+    docker \
+    curl
 
-RUN npm i -g n && \
-    n 18
+RUN mkdir -p /usr/local/lib/docker/cli-plugins
 
-RUN mkdir -p /etc/apt/keyrings
+RUN curl -SL https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64 -o /usr/local/lib/docker/cli-plugins/docker-compose
 
-RUN curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+RUN chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
 
-RUN echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
-  $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+COPY ./package.json .
 
-RUN apt-get update && apt-get install -y docker-ce-cli docker-compose-plugin
+RUN npm i
 
 COPY . .
 
-RUN npm i .
-
 ENTRYPOINT [ "npm", "start" ]
+
