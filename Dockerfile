@@ -4,7 +4,8 @@ WORKDIR /
 
 RUN apk add --update --no-cache \
     docker \
-    curl
+    curl \
+    smartmontools
 
 RUN mkdir -p /usr/local/lib/docker/cli-plugins
 
