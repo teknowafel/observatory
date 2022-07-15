@@ -9,9 +9,6 @@ RUN apt-get update && apt-get install -y \
     lsb-release \
     nodejs \
     npm \
-    net-tools \
-    smartmontools \
-    procps \
     binutils \
     debootstrap
 

@@ -4,3 +4,6 @@ package-lock.json
 readme.md
 requirements.txt
 tailwind.css
+/img
+/node_modules
+/.github
