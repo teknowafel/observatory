@@ -3,10 +3,11 @@ version: '3'
 
 services:
   observatory:
-    image: ghcr.io/teknowafel/observatory:latest
+    image: observatory:latest
+    #image: ghcr.io/teknowafel/observatory:latest
     privileged: true # Needs access for various diagnostic commands
     network_mode: host # Needs access to the host network for netstat
     volumes:
-      - /path/to/config.js:/backend/config.js
+      #- /path/to/config.js:/backend/config.js
       - /:/host:ro # Mount the host filesystem in read-only mode for chroot
       - /var/run/docker.sock:/var/run/docker.sock:ro # We need the docker socket in read-only to check running containers
